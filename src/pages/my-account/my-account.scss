@@ -1,0 +1,21 @@
+page-my-account {
+
+  .error_message {
+    display: none;
+  }
+
+
+
+  .error {
+    color:red;
+
+    ion-label:first-of-type {
+      display: none;
+    }
+
+    .error_message {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+}

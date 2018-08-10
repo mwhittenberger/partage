@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="isLoggedIn; else facebookLogin">
+    <h2>Hi, {{userName}} ({{userEmail}})</h2>
+    <p>
+      Token: {{myToken}}
+
+
+    </p>
+
+    <p>
+      <button ion-button icon-right (click)="logout()">
+        Logout
+      </button>
+    </p>
+  </div>
+  <ng-template #facebookLogin>
+    <button ion-button icon-right (click)="login()">
+      Login with
+      <ion-icon name="logo-facebook"></ion-icon>
+    </button>
+  </ng-template>
+<br>
+  My Lat is {{lat}}
+  My Long is {{lng}}
+</ion-content>

@@ -1,0 +1,279 @@
+<!--
+  Generated template for the MyAccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+   <ion-navbar>
+   <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+   </button>
+
+    <ion-title>Manage Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   Complete or update your information in the form below. All fields are required.
+
+   <form [formGroup]="userProfileForm" (ngSubmit)="onSubmit(userProfileForm.value)">
+
+      <ion-item [ngClass]="firstNameClasses">
+         <ion-label floating>First Name</ion-label>
+         <ion-input type="text" formControlName="firstName"></ion-input>
+         <ion-label class="error_message">Enter your first name</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="ageClasses">
+         <ion-label floating>Age</ion-label>
+         <ion-input type="tel" formControlName="age"></ion-input>
+         <ion-label class="error_message">Enter your age</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="genderClasses">
+         <ion-label floating>Gender</ion-label>
+         <ion-select formControlName="gender" >
+            <ion-option value=""></ion-option>
+            <ion-option value="female">Female</ion-option>
+            <ion-option value="male">Male</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Select your gender</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="cityClasses">
+         <ion-label floating>City</ion-label>
+         <ion-input type="text" formControlName="city" ></ion-input>
+         <ion-label class="error_message">Enter your city</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="stateClasses">
+         <ion-label floating>State</ion-label>
+         <ion-select formControlName="state" >
+            <ion-option value=""></ion-option>
+            <ion-option value="Alabama">Alabama</ion-option>
+            <ion-option value="Alaska">Alaska</ion-option>
+            <ion-option value="Arizona">Arizona</ion-option>
+            <ion-option value="Arkansas">Arkansas</ion-option>
+            <ion-option value="California">California</ion-option>
+            <ion-option value="Colorado">Colorado</ion-option>
+            <ion-option value="Connecticut">Connecticut</ion-option>
+            <ion-option value="Delaware">Delaware</ion-option>
+            <ion-option value="District of Columbia">District of Columbia</ion-option>
+            <ion-option value="Florida">Florida</ion-option>
+            <ion-option value="Georgia">Georgia</ion-option>
+            <ion-option value="Hawaii">Hawaii</ion-option>
+            <ion-option value="Idaho">Idaho</ion-option>
+            <ion-option value="Illinois">Illinois</ion-option>
+            <ion-option value="Indiana">Indiana</ion-option>
+            <ion-option value="Iowa">Iowa</ion-option>
+            <ion-option value="Kansas">Kansas</ion-option>
+            <ion-option value="Kentucky">Kentucky</ion-option>
+            <ion-option value="Louisiana">Louisiana</ion-option>
+            <ion-option value="Maine">Maine</ion-option>
+            <ion-option value="Maryland">Maryland</ion-option>
+            <ion-option value="Massachusetts">Massachusetts</ion-option>
+            <ion-option value="Michigan">Michigan</ion-option>
+            <ion-option value="Minnesota">Minnesota</ion-option>
+            <ion-option value="Mississippi">Mississippi</ion-option>
+            <ion-option value="Missouri">Missouri</ion-option>
+            <ion-option value="Montana">Montana</ion-option>
+            <ion-option value="Nebraska">Nebraska</ion-option>
+            <ion-option value="Nevada">Nevada</ion-option>
+            <ion-option value="New Hampshire">New Hampshire</ion-option>
+            <ion-option value="New Jersey">New Jersey</ion-option>
+            <ion-option value="New Mexico">New Mexico</ion-option>
+            <ion-option value="New York">New York</ion-option>
+            <ion-option value="North Carolina">North Carolina</ion-option>
+            <ion-option value="North Dakota">North Dakota</ion-option>
+            <ion-option value="Ohio">Ohio</ion-option>
+            <ion-option value="Oklahoma">Oklahoma</ion-option>
+            <ion-option value="Oregon">Oregon</ion-option>
+            <ion-option value="Pennsylvania">Pennsylvania</ion-option>
+            <ion-option value="Rhode Island">Rhode Island</ion-option>
+            <ion-option value="South Carolina">South Carolina</ion-option>
+            <ion-option value="South Dakota">South Dakota</ion-option>
+            <ion-option value="Tennessee">Tennessee</ion-option>
+            <ion-option value="Texas">Texas</ion-option>
+            <ion-option value="Utah">Utah</ion-option>
+            <ion-option value="Vermont">Vermont</ion-option>
+            <ion-option value="Virginia">Virginia</ion-option>
+            <ion-option value="Washington">Washington</ion-option>
+            <ion-option value="West Virginia">West Virginia</ion-option>
+            <ion-option value="Wisconsin">Wisconsin</ion-option>
+            <ion-option value="Wyoming">Wyoming</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Select your state</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="marriedClasses">
+         <ion-label floating>Are you married?</ion-label>
+         <ion-select formControlName="married" >
+            <ion-option value=""></ion-option>
+            <ion-option value="married">Married</ion-option>
+            <ion-option value="engaged">Engaged</ion-option>
+            <ion-option value="dating">Not Married</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Indicate your relationship status</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="durationClasses">
+         <ion-label floating>How many years have you been with your partner (enter 0 for less than one year)</ion-label>
+         <ion-input type="tel" formControlName="duration"></ion-input>
+         <ion-label class="error_message">Enter the number of years that you have been with your partner</ion-label>
+      </ion-item>
+
+      <ion-item [ngClass]="polyClasses">
+         <ion-label floating>Are you polyamorous?</ion-label>
+         <ion-select formControlName="poly" >
+            <ion-option value=""></ion-option>
+            <ion-option value="no">No</ion-option>
+            <ion-option value="yes">Yes</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Indicate your status</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="kidsClasses">
+         <ion-label floating>Do you have children?</ion-label>
+         <ion-select formControlName="have_kids" >
+            <ion-option value=""></ion-option>
+            <ion-option value="nokids">I don't have children</ion-option>
+            <ion-option value="kids">I do have children</ion-option>
+            <ion-option value="emptynest">I do have children, but they don't live with me</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Select your situation</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="spectrumClasses">
+         <ion-label floating>Where are you on the sexual spectrum?</ion-label>
+         <ion-select formControlName="spectrum" >
+            <ion-option value=""></ion-option>
+            <ion-option value="straight">Straight</ion-option>
+            <ion-option value="bi">Bisexual</ion-option>
+            <ion-option value="curious">Relaxed sexuality in the right situation</ion-option>
+            <ion-option value="gay">Gay</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Indicate your sexuality</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="sharingClasses">
+         <ion-label floating>How comfortable are you with sharing?</ion-label>
+         <ion-select formControlName="sharing_level" >
+            <ion-option value=""></ion-option>
+            <ion-option value="full">Full Swap</ion-option>
+            <ion-option value="soft">Soft Swap</ion-option>
+            <ion-option value="girl">Girl/Girl Only</ion-option>
+            <ion-option value="watch">Separate Watching Only</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Indicate your comfort level with sharing</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="experienceClasses">
+         <ion-label floating>What kind of experience do you have?</ion-label>
+         <ion-select formControlName="experience" >
+            <ion-option value=""></ion-option>
+            <ion-option value="new">Brand New</ion-option>
+            <ion-option value="no-sex">Played But No Sex</ion-option>
+            <ion-option value="few">Enjoyed a Few Encounters</ion-option>
+            <ion-option value="running">Off and Running</ion-option>
+            <ion-option value="done">Been There, Done That</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Indicate your experience level</ion-label>
+      </ion-item>
+      <ion-item>
+         When are you primarily available?
+      </ion-item>
+      <ion-item>
+         <ion-label>Weekends</ion-label>
+         <ion-checkbox color="dark" id="weekends" ng-model="availability.weekends" name='availability'  formControlName="availability1"  >Weekends</ion-checkbox>
+      </ion-item>
+      <ion-item>
+         <ion-label>Weekdays</ion-label>
+         <ion-checkbox color="dark" id="weekdays" ng-model="availability.weekdays"  name='availability'  formControlName="availability2"  >Weekdays</ion-checkbox>
+      </ion-item>
+      <ion-item>
+         <ion-label>What kinds of settings<br>are you interested in?</ion-label>
+      </ion-item>
+      <ion-item>
+         <ion-label>Private Party/Date</ion-label>
+         <ion-checkbox color="dark" id="private-party" ng-model="venue.private-party" name='venue' class="form-control" formControlName="venue1" [checked]="false" >Private Party/Date</ion-checkbox>
+      </ion-item>
+      <ion-item>
+         <ion-label>Club</ion-label>
+         <ion-checkbox color="dark" id="club" ng-model="venue.club" name='venue' class="form-control" formControlName="venue2" [checked]="false" >Club</ion-checkbox>
+      </ion-item>
+      <ion-item>
+         <ion-label>Share a Hotel Room</ion-label>
+         <ion-checkbox color="dark" id="hotel" ng-model="venue.hotel" name='venue' class="form-control" formControlName="venue3" [checked]="false" >Hotel</ion-checkbox>
+      </ion-item>
+      <ion-item [ngClass]="hostClasses">
+         <ion-label floating>Are you willing to host?</ion-label>
+         <ion-select formControlName="willing_to_host" >
+            <ion-option value=""></ion-option>
+            <ion-option value="no">No</ion-option>
+            <ion-option value="yes">Yes</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Indicate if you can host</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="desireClasses">
+         <ion-label floating>How soon are you willing to share?</ion-label>
+         <ion-select formControlName="desire" >
+            <ion-option value=""></ion-option>
+            <ion-option value="full">In it to win it</ion-option>
+            <ion-option value="depends">Depends</ion-option>
+            <ion-option value="drinks">Drinks first, then we'll see</ion-option>
+            <ion-option value="second">Not on the first date</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Indicate your timeline preference</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="scheduleClasses">
+         <ion-label floating>How much lead time do you need to meet up?</ion-label>
+         <ion-select formControlName="schedule" >
+            <ion-option value=""></ion-option>
+            <ion-option value="anytime">Ready at a moments notice</ion-option>
+            <ion-option value="hours">I'd need a couple of hours to get ready</ion-option>
+            <ion-option value="day">I would need at least a day</ion-option>
+            <ion-option value="longer">I need time to make arrangements</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Indicate your planning time needed</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="frequencyClasses">
+         <ion-label floating>How often do you like to share?</ion-label>
+         <ion-select formControlName="frequency" >
+            <ion-option value=""></ion-option>
+            <ion-option value="alot">As much as possible</ion-option>
+            <ion-option value="weekly">Once a week</ion-option>
+            <ion-option value="monthly">Once a month</ion-option>
+            <ion-option value="quarterly">Every couple of months</ion-option>
+            <ion-option value="yearly">Once or twice a year</ion-option>
+         </ion-select>
+         <ion-label class="error_message">Indicate how often you like to share</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="looksClasses">
+         <ion-label floating>Describe your partner's looks and personality</ion-label>
+         <ion-textarea formControlName="looks"></ion-textarea>
+         <ion-label class="error_message">Describe your partner's looks and personality</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="relationshipClasses">
+         <ion-label floating>Describe your relationship</ion-label>
+         <ion-textarea formControlName="relationship"></ion-textarea>
+         <ion-label class="error_message">Describe your relationship</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="fantasiesClasses">
+         <ion-label floating>Describe your fantasies</ion-label>
+         <ion-textarea formControlName="fantasies"></ion-textarea>
+         <ion-label class="error_message">Describe your fantasies</ion-label>
+      </ion-item>
+      <ion-item [ngClass]="lookingClasses">
+         <ion-label floating>What are you looking for?</ion-label>
+         <ion-textarea formControlName="looking"></ion-textarea>
+         <ion-label class="error_message">Let the people know what you want</ion-label>
+      </ion-item>
+      <ion-item>
+         <ion-label>Indicate your age range preference</ion-label>
+         <ion-range [(ngModel)]="agePreference" [ngModelOptions]="{standalone:true}" dualKnobs="true" tooltip="true" min="21" max="65" step="1" pin="true" snaps="true"></ion-range>
+
+      </ion-item>
+      Lower Range: {{agePreference.lower}} - Upper Range: {{agePreference.upper}}
+
+   <div padding>
+      <button ion-button outline [disabled]="isDisabled">Update Profile</button>
+   </div>
+
+   </form>
+
+</ion-content>
+

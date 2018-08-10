@@ -1,0 +1,7 @@
+{
+  "name": "partage",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
