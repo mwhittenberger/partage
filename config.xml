@@ -3,7 +3,7 @@
     <name>partage</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://172.16.10.132:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -109,5 +109,6 @@
     <allow-navigation href="http://172.16.10.195:8127" />
     <allow-navigation href="http://172.16.10.195:8128" />
     <allow-navigation href="http://172.16.10.195:8100" />
+    <allow-navigation href="http://172.16.10.132:8100" />
     <engine name="ios" spec="4.5.5" />
 </widget>

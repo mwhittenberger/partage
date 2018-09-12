@@ -15,6 +15,48 @@
 
 
 
-<ion-content padding>
+<ion-content padding >
+  <div [ngClass]="profileCard">
+<div class="p_initials">{{this.initials}}</div>
 
+<div class="distance">{{this.distance}}</div>
+<div class="relationship">{{this.relationship}}</div>
+<div [ngClass]="verified"><ion-icon name="ribbon"></ion-icon> Verified</div>
+
+  <ion-slides pager class="profile_gallery">
+
+    <ion-slide *ngFor="let image of profileGallery">
+      <img src="{{image}}" class="profile_image">
+    </ion-slide>
+
+  </ion-slides>
+
+   <button ion-button [disabled]="isDisabled" (click)="openModal(this.partner1, 'partner1')" class="her-deats">About {{this.partner1}}</button>
+   <button ion-button [disabled]="isDisabled" (click)="openModal(this.partner2, 'partner2')" class="his-deats">About {{this.partner2}}</button>
+
+   <div style="clear:both"></div>
+
+
+  <button ion-button outline icon-only [disabled]="isDisabled" class="thumbs-up" (click) = "thumbsup()">
+    <ion-icon name="thumbs-up"></ion-icon>
+  </button>
+
+  <button ion-button outline icon-only [disabled]="isDisabled" class="thumbs-down" (click) = "thumbsdown()">
+    <ion-icon name="thumbs-down"></ion-icon>
+  </button>
+
+  <button [disabled]="isDisabled" ion-button full (click) = "next()">Next Connection</button>
+  </div>
+  <div [ngClass]="matches">
+    You currently have no possible connections.
+  </div>
 </ion-content>
+
+
+<script id="image-modal.html" type="text/ng-template">
+  <div class="modal image-modal transparent" ng-click="closeModal()">
+    <ion-pane class="transparent">
+      <img ng-src="{{imageSrc}}" class="fullscreen-image"/>
+    </ion-pane>
+  </div>
+</script>

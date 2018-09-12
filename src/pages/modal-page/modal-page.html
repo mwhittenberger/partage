@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ModalPage page.
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+   <ion-navbar>
+      <ion-title>{{this.modalTitle}}</ion-title>
+      <ion-buttons end>
+         <button ion-button (click)="closeModal()">Close</button>
+      </ion-buttons>
+   </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   Details about {{this.toDisplay.header}}
+   <ion-list>
+      <ion-list-header>Age</ion-list-header>
+      <ion-item >{{this.toDisplay.Age}}</ion-item>
+      <ion-list-header>Location</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay.location}}</ion-item>
+      <ion-list-header>Do you have kids?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['Do you have kids?']}}</ion-item>
+      <ion-list-header>Are you polyamorous?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['Are you polyamorous?']}}</ion-item>
+      <ion-list-header text-wrap>Where do you fall on the sexual sprectrum?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['Where do you fall on the sexual sprectrum?']}}</ion-item>
+      <ion-list-header>Lifestyle Experience</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['Lifestyle Experience']}}</ion-item>
+      <ion-list-header text-wrap>How far do you like to go when sharing?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['How much do you like to share?']}}</ion-item>
+      <ion-list-header text-wrap>How often do you like to share?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['How often do you like to share?']}}</ion-item>
+      <ion-list-header text-wrap>How fast do you move when sharing?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['How fast do you move when sharing?']}}</ion-item>
+      <ion-list-header text-wrap>How much lead time do you need to meet up?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['How much lead time do you need to meet up?']}}</ion-item>
+      <ion-list-header text-wrap>What is your availability for sharing?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['What is your availability for sharing?']}}</ion-item>
+      <ion-list-header text-wrap>What locations are preferable to you for sharing?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['What locations are preferable to you for sharing?']}}</ion-item>
+      <ion-list-header>Are you willing to host?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['Are you willing to host?']}}</ion-item>
+      <ion-list-header>What are you looking for?</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['What are you looking for?']}}</ion-item>
+      <ion-list-header>Describe your fantasies</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['Describe your fantasies']}}</ion-item>
+      <ion-list-header text-wrap>Describe your partners looks and personality</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['Describe your partners looks and personality']}}</ion-item>
+      <ion-list-header>Describe your relationship</ion-list-header>
+      <ion-item text-wrap >{{this.toDisplay['Describe your relationship']}}</ion-item>
+
+
+   </ion-list>
+
+</ion-content>

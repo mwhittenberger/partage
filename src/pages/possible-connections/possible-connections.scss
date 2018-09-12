@@ -1,3 +1,46 @@
 page-possible-connections {
-
+  .thumbs-down {float: right; font-size: 20px; margin-bottom: 20px;}
+  .thumbs-up{float: left; font-size: 20px; margin-bottom: 20px;}
+  .her-deats{float: left;}
+  .his-deats{float: right;}
+  .p_initials {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .distance {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .relationship {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .profile_gallery {
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .showVerified {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+  .hideVerified {
+    display: none;
+  }
+  .showCard {
+    display: block;
+  }
+  .hideCard {
+    display: none;
+  }
+  .hasmatches {
+    display: none;
+  }
+  .nomatches {
+    display: block;
+  }
 }
