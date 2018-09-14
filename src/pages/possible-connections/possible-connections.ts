@@ -94,6 +94,7 @@ export class PossibleConnectionsPage {
         });
     }
 
+
     ionViewDidLoad() {
         console.log('ionViewDidLoad PossibleConnectionsPage');
     }

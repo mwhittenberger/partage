@@ -23,13 +23,7 @@
 <div class="relationship">{{this.relationship}}</div>
 <div [ngClass]="verified"><ion-icon name="ribbon"></ion-icon> Verified</div>
 
-  <ion-slides pager class="profile_gallery">
 
-    <ion-slide *ngFor="let image of profileGallery">
-      <img src="{{image}}" class="profile_image">
-    </ion-slide>
-
-  </ion-slides>
 
    <button ion-button [disabled]="isDisabled" (click)="openModal(this.partner1, 'partner1')" class="her-deats">About {{this.partner1}}</button>
    <button ion-button [disabled]="isDisabled" (click)="openModal(this.partner2, 'partner2')" class="his-deats">About {{this.partner2}}</button>

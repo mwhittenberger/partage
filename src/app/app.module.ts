@@ -10,7 +10,13 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { MyAccountPage } from '../pages/my-account/my-account';
 import { PossibleConnectionsPage } from '../pages/possible-connections/possible-connections';
+import { QueuePage } from '../pages/queue/queue';
+import { ProfileImagesPage } from '../pages/profile-images/profile-images';
 
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,7 +33,9 @@ import { Geolocation } from '@ionic-native/geolocation';
     HomePage,
     ListPage,
     MyAccountPage,
-    PossibleConnectionsPage
+    PossibleConnectionsPage,
+    QueuePage,
+    ProfileImagesPage
   ],
   imports: [
     BrowserModule,
@@ -46,11 +54,17 @@ import { Geolocation } from '@ionic-native/geolocation';
     HomePage,
     ListPage,
     MyAccountPage,
-    PossibleConnectionsPage
+    PossibleConnectionsPage,
+    QueuePage,
+    ProfileImagesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    File,
+    Transfer,
+    Camera,
+    FilePath,
     Facebook,
     WpServiceProvider,
     Geolocation,

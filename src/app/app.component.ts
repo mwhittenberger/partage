@@ -8,6 +8,8 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import {MyAccountPage} from "../pages/my-account/my-account";
 import {PossibleConnectionsPage} from "../pages/possible-connections/possible-connections";
+import {QueuePage} from "../pages/queue/queue";
+import {ProfileImagesPage} from "../pages/profile-images/profile-images";
 
 @Component({
   templateUrl: 'app.html'
@@ -32,7 +34,9 @@ export class MyApp {
             { title: 'Home', component: HomePage },
             { title: 'List', component: ListPage },
             {title: 'Manage Profile', component: MyAccountPage },
-            {title: 'Possible Connections', component: PossibleConnectionsPage }
+            { title: 'Manage Profile Images', component: ProfileImagesPage },
+            {title: 'Possible Connections', component: PossibleConnectionsPage },
+            {title: 'My Queue', component: QueuePage }
         ];
 
 

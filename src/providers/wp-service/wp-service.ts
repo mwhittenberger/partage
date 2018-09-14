@@ -8,6 +8,7 @@ export class WpServiceProvider {
     apiMetaUrl = 'https://www.partageapp.com/api/user/get_user_meta/?cookie=';
     metaUpdateUrl = 'https://www.partageapp.com/api/user/update_user_meta_vars/?cookie=';
     possibleConnectionsUrl = 'https://www.partageapp.com/api/user/get_possible_connections/?cookie=';
+    queueUrl = 'https://www.partageapp.com/api/user/get_queue/?cookie=';
     ajaxUrl = 'https://www.partageapp.com/wp-admin/admin-ajax.php';
     thumbsResultUrl = 'https://www.partageapp.com/api/user/get_accept_reject/?cookie=';
 
@@ -29,6 +30,10 @@ export class WpServiceProvider {
 
     getPossibleConnections(userCookie) {
         return this.http.get(this.possibleConnectionsUrl + userCookie);
+    }
+
+    getQueue(userCookie) {
+        return this.http.get(this.queueUrl + userCookie);
     }
 
     postRequestAcceptReject(result, connection_id, user, userCookie) {
