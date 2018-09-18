@@ -11,6 +11,11 @@ export class WpServiceProvider {
     queueUrl = 'https://www.partageapp.com/api/user/get_queue/?cookie=';
     ajaxUrl = 'https://www.partageapp.com/wp-admin/admin-ajax.php';
     thumbsResultUrl = 'https://www.partageapp.com/api/user/get_accept_reject/?cookie=';
+    uploadUrl = 'https://www.partageapp.com/api/user/upload_image/?cookie=';
+    imagesUrl = 'https://www.partageapp.com/api/user/get_profile_images/?cookie=';
+    updateGalleryUrl = 'https://www.partageapp.com/api/user/update_gallery/?cookie=';
+    verifyUrl = 'https://www.partageapp.com/api/user/is_verfied/?cookie=';
+    verifyImageUrl = 'https://www.partageapp.com/api/user/verify_image/?cookie=';
 
     constructor(public http: HttpClient) {
 
@@ -34,6 +39,24 @@ export class WpServiceProvider {
 
     getQueue(userCookie) {
         return this.http.get(this.queueUrl + userCookie);
+    }
+
+    uploadImage(userCookie, image, location) {
+        return this.http.get( this.uploadUrl + userCookie + '&image=' + image + '&location=' + location);
+    }
+
+    getImages(userCookie, gallery) {
+        console.log('correct function');
+        return this.http.get( this.imagesUrl + userCookie + '&gallery=' + gallery);
+    }
+    updateGallery(userCookie, gallery, images) {
+        return this.http.get( this.updateGalleryUrl + userCookie + '&gallery=' + gallery + '&images='+images);
+    }
+    isVerified(userCookie) {
+        return this.http.get( this.verifyUrl + userCookie);
+    }
+    verifyImage(userCookie, image) {
+        return this.http.get( this.verifyImageUrl + userCookie + '&image=' + image);
     }
 
     postRequestAcceptReject(result, connection_id, user, userCookie) {

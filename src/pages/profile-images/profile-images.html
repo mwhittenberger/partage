@@ -1,25 +1,78 @@
 <ion-header>
-
-   <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-   </button>
    <ion-navbar>
-      <ion-title>List</ion-title>
+      <button ion-button menuToggle>
+         <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Manage Profile Images</ion-title>
    </ion-navbar>
-
 </ion-header>
 
-<ion-content>
-   <ion-list>
-      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-         <ion-icon [name]="item.icon" item-start></ion-icon>
-         {{item.title}}
-         <div class="item-note" item-end>
-            {{item.note}}
-         </div>
-      </button>
+<ion-content padding>
+
+
+
+
+   <h3>Profile Gallery</h3>
+   <ion-list reorder="true"
+             (ionItemReorder)="reorderItems($event);">
+      <ion-item-sliding *ngFor="let image of imagesArray">
+
+         <ion-item class="profile-image" ><img src="{{image}}">
+         </ion-item>
+
+         <ion-item-options>
+            <button danger (click)="removeItem(image, 'profile')"><ion-icon name="trash"></ion-icon> Delete</button>
+         </ion-item-options>
+      </ion-item-sliding>
+
    </ion-list>
-   <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title}}</b>
-   </div>
+
+   <h3>Private Gallery</h3>
+   <ion-list reorder="true"
+             (ionItemReorder)="reorderItems2($event);">
+      <ion-item-sliding *ngFor="let image of imagesArray2">
+
+         <ion-item class="profile-image" ><img src="{{image}}">
+         </ion-item>
+
+         <ion-item-options>
+            <button danger (click)="removeItem(image, 'private')"><ion-icon name="trash"></ion-icon> Delete</button>
+         </ion-item-options>
+      </ion-item-sliding>
+
+   </ion-list>
+
+
+<div [ngClass]="hideVerify">
+<h3>Verify Your Account</h3>
+Verify your account by uploading a picture of you and your partner touching your noses. Verified accounts display a special badge indicating that you are very real.
+
+</div>
+
+   <h3 [hidden]="lastImage === null">Image to be uploaded</h3>
+   <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+   <br><br><br><br>
+
 </ion-content>
+
+<ion-footer>
+   <ion-toolbar color="primary">
+      <ion-buttons>
+         <button ion-button icon-left (click)="presentActionSheet()">
+            <ion-icon name="camera"></ion-icon>Select Image
+         </button>
+         <hr>
+         <button ion-button icon-left (click)="uploadImage('public')" [disabled]="lastImage === null">
+            <ion-icon name="cloud-upload"></ion-icon>Upload to Profile Gallery
+         </button>
+         <hr>
+         <button ion-button icon-left (click)="uploadImage('private')" [disabled]="lastImage === null">
+            <ion-icon name="cloud-upload"></ion-icon>Upload to Private Gallery
+         </button>
+         <hr>
+         <button ion-button icon-left (click)="verifyAccount" [disabled]="lastImage === null" [ngClass]="hideVerify">
+            <ion-icon name="cloud-upload"></ion-icon>Verify My Account
+         </button>
+      </ion-buttons>
+   </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,18 @@
+page-profile-images {
+
+  .profile-image img {
+    max-height: 125px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .hideVerify {
+    display: none;
+  }
+
+  .showVerify {
+    display: block;
+  }
+
+}

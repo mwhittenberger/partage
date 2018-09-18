@@ -26,7 +26,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 //import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 
-
 @NgModule({
   declarations: [
     MyApp,
